@@ -55,6 +55,94 @@ $('#bookingReset').addEventListener('click', () => {
   bookingThanks.hidden = true;
 });
 
+// ===== Главный экран: сменяющаяся роль =====
+(function rotateRole() {
+  const el = $('#roleWord');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const roles = ['режиссёр', 'коллекционер', 'автор', 'арт-директор', 'хозяйка салона', 'дирижёр', 'парфюмер'];
+  let i = 0;
+  setInterval(() => {
+    el.classList.add('is-out');
+    setTimeout(() => {
+      i = (i + 1) % roles.length;
+      el.textContent = roles[i];
+      el.classList.remove('is-out');
+    }, 350);
+  }, 2600);
+})();
+
+// ===== Никогда раньше: отметки и паспорт =====
+(function firstsPassport() {
+  const box = $('#firsts');
+  if (!box) return;
+  const stamps = $('#stamps');
+  const empty = $('#stampsEmpty');
+  const count = $('#firstsCount');
+  const word = $('#firstsWord');
+  const KEY = 'rs-firsts';
+  const plural = n => {
+    const m10 = n % 10, m100 = n % 100;
+    if (m10 === 1 && m100 !== 11) return 'первый раз';
+    if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return 'первых раза';
+    return 'первых разов';
+  };
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) {}
+  const buttons = [...box.querySelectorAll('.first')];
+  buttons.forEach(b => { if (saved.includes(b.dataset.i)) b.setAttribute('aria-pressed', 'true'); });
+
+  function render(animate) {
+    const on = buttons.filter(b => b.getAttribute('aria-pressed') === 'true');
+    count.textContent = on.length;
+    word.textContent = plural(on.length);
+    empty.hidden = on.length > 0;
+    stamps.innerHTML = '';
+    on.forEach((b, k) => {
+      const st = document.createElement('span');
+      st.className = 'stamp';
+      st.textContent = b.textContent;
+      st.style.setProperty('--r', ((k * 37) % 24 - 12) + 'deg');
+      if (!animate) st.style.animation = 'none';
+      stamps.appendChild(st);
+    });
+    try { localStorage.setItem(KEY, JSON.stringify(on.map(b => b.dataset.i))); } catch (e) {}
+  }
+
+  box.addEventListener('click', e => {
+    const b = e.target.closest('.first');
+    if (!b) return;
+    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    render(true);
+  });
+  render(false);
+})();
+
+// ===== Меняющийся знак: выбор эмблемы для шапки =====
+(function emblemPicker() {
+  const list = $('#emblems');
+  const logo = $('#brandLogo');
+  if (!list || !logo) return;
+  const buttons = [...list.querySelectorAll('.emblem')];
+  const mark = i => buttons.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.i === i)));
+  mark(+logo.dataset.i || 0);
+  list.addEventListener('click', e => {
+    const b = e.target.closest('.emblem');
+    if (!b) return;
+    const i = +b.dataset.i;
+    const img = b.querySelector('img');
+    logo.src = img.src;
+    logo.width = +img.getAttribute('width');
+    logo.height = +img.getAttribute('height');
+    logo.dataset.i = i;
+    logo.classList.remove('is-swap');
+    void logo.offsetWidth;
+    logo.classList.add('is-swap');
+    // следующий визит продолжит с выбранного
+    try { localStorage.setItem('rs-emblem', i); } catch (e) {}
+    mark(i);
+  });
+})();
+
 // ===== Главный экран: сад =====
 const hero = $('#hero');
 const garden = $('#garden');
