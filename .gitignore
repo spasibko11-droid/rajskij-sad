@@ -1,0 +1,12 @@
+.DS_Store
+_original/
+_shot.html
+_t.html
+
+# не используются на сайте, лежат только локально
+assets/logo.jpg
+images/deco/blossom.webp
+images/deco/leaves-blur.webp
+images/deco/vine.webp
+images/garden/arch.webp
+images/garden/arch-sm.webp
