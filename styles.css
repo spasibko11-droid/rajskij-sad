@@ -2935,3 +2935,7 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 }
 .grow__foot p { font-family: 'Noto Serif Display', serif !important; font-weight: 300 !important; font-style: normal !important;
   font-size: clamp(17px, 1.35vw, 20px) !important; line-height: 1.5 !important; max-width: 440px !important; color: rgba(247,236,232,.88) !important; letter-spacing: 0 !important; }
+/* подложка: пока цветы распускаются — бутоны, после окончания — раскрытые цветы */
+.hero--kling .hero__stage { background-image: url(video/kling-bg-first.webp?v=1792516832) !important; }
+.hero--kling.is-bloomed .hero__stage { background-image: url(video/kling-bg-last.webp?v=1792516832) !important; }
+.hero--kling .hero__vid--bg { background: none !important; }

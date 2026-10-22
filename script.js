@@ -335,11 +335,14 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
     if (v.readyState >= 2) kick();
     else {
       v.addEventListener('loadeddata', kick, { once: true });
-      v.play().then(() => { v.pause(); v.currentTime = 0; kick(); }).catch(() => {});
+      // просим браузер начать загрузку; паузу не ставим — иначе медленная загрузка останавливала уже запущенное видео
+      v.play().then(kick).catch(() => {});
       setTimeout(kick, 1500);
     }
     // после проигрывания постер = последний кадр: если браузер выгрузит видео при прокрутке, цветы останутся раскрытыми
-    v.addEventListener('ended', () => { v.classList.add('is-done'); if (v.dataset.end) v.poster = v.dataset.end; }, { once: true });
+    // некоторые браузеры не присылают ended на последнем кадре — отмечаем по времени
+    v.addEventListener('timeupdate', () => { if (v.duration && v.currentTime >= v.duration - .15) hero.classList.add('is-bloomed'); });
+    v.addEventListener('ended', () => { v.classList.add('is-done'); hero.classList.add('is-bloomed'); if (v.dataset.end) v.poster = v.dataset.end; }, { once: true });
   });
   setTimeout(go, 2500);
 })();
