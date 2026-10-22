@@ -8,8 +8,9 @@
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Tenor+Sans&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=1792672346">
+<link rel="preload" as="image" href="video/kling-bg-first.webp?v=1792680082" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Tenor+Sans&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1792680082">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="page-film">
@@ -22,7 +23,7 @@
       <a href="#calendar">Афиша</a>
     </nav>
     <a href="#top" class="brand" aria-label="Райский сад, на главную">
-      <img class="brand__logo" src="assets/logo-round.webp" alt="" width="192" height="192">
+      <img decoding="async" class="brand__logo" src="assets/logo-round.webp" alt="" width="192" height="192">
       <span class="brand__text">
         <span class="brand__name">Райский сад</span>
         <span class="brand__tag">Пространство заботы и творчества</span>
@@ -45,9 +46,9 @@
   <!-- Главный экран: цветущие ветки на бордовом фоне -->
   <section class="hero hero--film hero--burg hero--kling" id="hero">
     <div class="hero__stage" id="garden" aria-hidden="true">
-      <video class="hero__vid hero__vid--bg" data-rate="1" muted playsinline webkit-playsinline preload="auto" poster="video/kling-bg-first.webp?v=1792516832" data-end="video/kling-bg-last.webp?v=1792516832">
-        <source src="video/kling-bg-sm.mp4?v=1792516832" type="video/mp4" media="(max-width: 900px)">
-        <source src="video/kling-bg.mp4?v=1792516832" type="video/mp4">
+      <video class="hero__vid hero__vid--bg" data-rate="1" muted playsinline webkit-playsinline preload="auto" poster="video/kling-bg-first.webp?v=1792680082" data-end="video/kling-bg-last.webp?v=1792680082">
+        <source src="video/kling-bg-sm.mp4?v=1792680082" type="video/mp4" media="(max-width: 900px)">
+        <source src="video/kling-bg.mp4?v=1792680082" type="video/mp4">
       </video>
     </div>
     <div class="wrap hero__layout hero__layout--burg">
@@ -79,7 +80,7 @@
   <section class="about2" id="about">
     <div class="wrap about2__grid">
       <div class="about2__media">
-        <img class="about2__bowl" src="images/about2/bowl.webp?v=1792528113" srcset="images/about2/bowl-sm.webp?v=1792528113 720w, images/about2/bowl.webp?v=1792528113 1122w" sizes="(max-width: 960px) 92vw, 40vw" alt="Каменная чаша с красными яблоками и оливковой ветвью в солнечном свете" width="1122" height="1402" loading="lazy">
+        <img decoding="async" class="about2__bowl" src="images/about2/bowl.webp?v=1792680082" srcset="images/about2/bowl-sm.webp?v=1792680082 720w, images/about2/bowl.webp?v=1792680082 1122w" sizes="(max-width: 960px) 92vw, 40vw" alt="Каменная чаша с красными яблоками и оливковой ветвью в солнечном свете" width="1122" height="1402" loading="lazy">
       </div>
       <div class="about2__text">
         <div class="eyebrow">О пространстве</div>
@@ -91,15 +92,15 @@
     </div>
     <ol class="wrap growth growth--wide">
           <li class="growth__item">
-            <img class="growth__ico" src="images/about2/p1.webp?v=1792580997" alt="Открытка с оливковой веточкой" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">01</span>Внимание к&nbsp;человеку</h3>
+            <img decoding="async" class="growth__ico" src="images/about2/p1.webp?v=1792680082" alt="Открытка с оливковой веточкой" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">01</span>Внимание к&nbsp;человеку</h3>
             <p class="growth__text">Уважение к вашему темпу, интересам и опыту.</p></div>
           </li>
           <li class="growth__item">
-            <img class="growth__ico" src="images/about2/p2.webp?v=1792580997" alt="Глиняная чаша ручной работы" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">02</span>Участие вместо наблюдения</h3>
+            <img decoding="async" class="growth__ico" src="images/about2/p2.webp?v=1792680082" alt="Глиняная чаша ручной работы" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">02</span>Участие вместо наблюдения</h3>
             <p class="growth__text">Обсуждать, пробовать и создавать что-то своё.</p></div>
           </li>
           <li class="growth__item">
-            <img class="growth__ico" src="images/about2/p3.webp?v=1792580997" alt="Старинный ключ с бордовой лентой" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">03</span>Среда, в которую хочется вернуться</h3>
+            <img decoding="async" class="growth__ico" src="images/about2/p3.webp?v=1792680082" alt="Старинный ключ с бордовой лентой" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">03</span>Среда, в которую хочется вернуться</h3>
             <p class="growth__text">Знакомые лица, новые темы и ощущение общности.</p></div>
           </li>
         </ol>
@@ -118,7 +119,7 @@
     </div>
     <div class="formats">
       <a href="#calendar" class="format" data-filter-link="Творчество">
-        <span class="format__arch"><img class="format__pic" src="images/formats/f1.webp?v=1792534932" alt="Живопись: женщина у окна рисует акварель" width="800" height="1000" loading="lazy"></span>
+        <span class="format__arch"><img decoding="async" class="format__pic" src="images/formats/f1.webp?v=1792680082" alt="Живопись: женщина у окна рисует акварель" width="800" height="1000" loading="lazy"></span>
         <span class="format__top"><span class="format__num">01</span><span class="format__kicker">«Сделано мной»</span></span>
         <span class="format__title">Творческие мастер-классы</span>
         <span class="format__text">Рисование, рукоделие, вышивка, лепка, кондитерское дело. Пара часов, чтобы поработать руками, отвлечься и унести домой собственную работу. Опыт не нужен.</span>
@@ -126,7 +127,7 @@
         <span class="format__link">Выбрать мастер-класс →</span>
       </a>
       <a href="#calendar" class="format" data-filter-link="Психология">
-        <span class="format__arch"><img class="format__pic" src="images/formats/f2.webp?v=1792531628" alt="Две чашки травяного чая и оливковая веточка на оливковом фоне" width="800" height="1000" loading="lazy"></span>
+        <span class="format__arch"><img decoding="async" class="format__pic" src="images/formats/f2.webp?v=1792680082" alt="Две чашки травяного чая и оливковая веточка на оливковом фоне" width="800" height="1000" loading="lazy"></span>
         <span class="format__top"><span class="format__num">02</span><span class="format__kicker">«Услышать себя»</span></span>
         <span class="format__title">Встречи с психологом</span>
         <span class="format__text">Встречи и воркшопы в малой группе: отношения, личные границы, уверенность, внимание к собственным желаниям. Бережно, без давления и оценок.</span>
@@ -134,7 +135,7 @@
         <span class="format__link">Найти встречу для себя →</span>
       </a>
       <a href="#calendar" class="format" data-filter-link="Кино и книги">
-        <span class="format__arch"><img class="format__pic" src="images/formats/f3.webp?v=1792531628" alt="Живописный натюрморт: инжир на страницах старинной книги" width="800" height="1000" loading="lazy"></span>
+        <span class="format__arch"><img decoding="async" class="format__pic" src="images/formats/f3.webp?v=1792680082" alt="Живописный натюрморт: инжир на страницах старинной книги" width="800" height="1000" loading="lazy"></span>
         <span class="format__top"><span class="format__num">03</span><span class="format__kicker">«Кино с послевкусием»</span></span>
         <span class="format__title">Кино и книжный клуб</span>
         <span class="format__text">Фильм, разговор с ведущей, кофе и десерт. А раз в месяц книжный клуб: одна книга и тёплое обсуждение. Место для обмена впечатлениями и знакомства через общие интересы.</span>
@@ -142,21 +143,21 @@
         <span class="format__link">Культурная афиша →</span>
       </a>
       <a href="#calendar" class="format" data-filter-link="Игры">
-        <span class="format__arch"><img class="format__pic" src="images/formats/f4.webp?v=1792581673" alt="Винтажные игральные карты и игральная кость" width="800" height="1000" loading="lazy"></span>
+        <span class="format__arch"><img decoding="async" class="format__pic" src="images/formats/f4.webp?v=1792680082" alt="Винтажные игральные карты и игральная кость" width="800" height="1000" loading="lazy"></span>
         <span class="format__top"><span class="format__num">04</span><span class="format__kicker">Попробовать</span></span>
         <span class="format__title">Игры и самопознание</span>
         <span class="format__text">Игра «Лилу»: повод исследовать свои желания, увидеть сильные стороны и новые возможности. Небольшая компания, поддержка ведущей и идеи для следующего шага.</span>
         <span class="format__link">Выбрать игру →</span>
       </a>
       <a href="#calendar" class="format" data-filter-link="Женские вечера">
-        <span class="format__arch"><img class="format__pic" src="images/formats/f5.webp?v=1792581673" alt="Букет садовых роз с бордовой лентой" width="800" height="1000" loading="lazy"></span>
+        <span class="format__arch"><img decoding="async" class="format__pic" src="images/formats/f5.webp?v=1792680082" alt="Букет садовых роз с бордовой лентой" width="800" height="1000" loading="lazy"></span>
         <span class="format__top"><span class="format__num">05</span><span class="format__kicker">Побыть собой</span></span>
         <span class="format__title">Женские вечера</span>
         <span class="format__text">Уютные вечера с темой: красота как сила, стиль, разговоры по душам. Чай, угощение и хорошая компания.</span>
         <span class="format__link">Ближайшие вечера →</span>
       </a>
       <a href="#calendar" class="format" data-filter-link="Эксперты">
-        <span class="format__arch"><img class="format__pic" src="images/formats/f6.webp?v=1792531628" alt="Разрезанное яблоко и латунная лупа на льне" width="800" height="1000" loading="lazy"></span>
+        <span class="format__arch"><img decoding="async" class="format__pic" src="images/formats/f6.webp?v=1792680082" alt="Разрезанное яблоко и латунная лупа на льне" width="800" height="1000" loading="lazy"></span>
         <span class="format__top"><span class="format__num">06</span><span class="format__kicker">Узнать больше</span></span>
         <span class="format__title">Встречи с экспертами</span>
         <span class="format__text">Нутрициолог, стилист, косметолог и другие специалисты. Короткая практическая встреча и ответы на ваши вопросы.</span>
@@ -177,7 +178,7 @@
       </header>
       <div class="clubs3__cards">
         <article class="inv inv--milk">
-          <div class="inv__logo"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"><small>Приглашение</small></div>
+          <div class="inv__logo"><img decoding="async" src="assets/logo-emblem.webp" alt="" width="360" height="186"><small>Приглашение</small></div>
           <hr>
           <span class="inv__caps">Клуб разговорного английского</span>
           <h3>Говорить <em>без страха</em></h3>
@@ -185,11 +186,11 @@
           <ul><li>Группы по уровням: от первых фраз до уверенного общения</li><li>Практика с носителем языка на темы из жизни</li><li>Можно ошибаться, делать паузы и пробовать снова</li><li>На первой встрече определяем уровень и расписание</li></ul>
           <a class="inv__btn" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Регистрация в клуб</a>
           <a class="inv__link" href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener">Мне интересен английский</a>
-          <div class="inv__sign"><img src="images/people/avgustina.webp" alt="Августина, ведущая клуба" width="800" height="960" loading="lazy"><div>Жду вас, Августина<small>Носитель языка, «Центр Магистра»</small></div></div>
+          <div class="inv__sign"><img decoding="async" src="images/people/avgustina.webp" alt="Августина, ведущая клуба" width="800" height="960" loading="lazy"><div>Жду вас, Августина<small>Носитель языка, «Центр Магистра»</small></div></div>
           <div class="inv__seal" aria-label="Готовим запуск">Готовим<i>запуск</i></div>
         </article>
         <article class="inv inv--wine">
-          <div class="inv__logo"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"><small>Приглашение</small></div>
+          <div class="inv__logo"><img decoding="async" src="assets/logo-emblem.webp" alt="" width="360" height="186"><small>Приглашение</small></div>
           <hr>
           <span class="inv__caps">Клуб «Райский сад»</span>
           <h3>Своё дело <em>среди своих</em></h3>
@@ -212,7 +213,7 @@
       </header>
 
       <article class="opening2">
-        <div class="opening2__art"><img src="images/posters/opening.webp?v=1792594625" alt="Живописный натюрморт при свечах" width="800" height="1000" loading="lazy"></div>
+        <div class="opening2__art"><img decoding="async" src="images/posters/opening.webp?v=1792680082" alt="Живописный натюрморт при свечах" width="800" height="1000" loading="lazy"></div>
         <div class="opening2__body">
           <div class="opening2__date"><b>15</b><span>ноября<small>воскресенье · 2026</small></span></div>
           <div class="opening2__kicker">Начинаем знакомство</div>
@@ -250,7 +251,7 @@
       <div class="wheel__stage">
         <span class="wheel__pointer" aria-hidden="true"></span>
         <svg class="wheel__disc" id="wheelDisc" viewBox="-200 -200 400 400" role="img" aria-label="Колесо с подарками"></svg>
-        <span class="wheel__hub"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"></span>
+        <span class="wheel__hub"><img decoding="async" src="assets/logo-emblem.webp" alt="" width="360" height="186"></span>
       </div>
     </div>
   </section>
@@ -261,7 +262,7 @@
     <span class="founder__bigname" aria-hidden="true">Эллина</span>
     <div class="wrap section founder__inner">
       <div class="founder__photo">
-        <img src="images/people/ellina-cut.webp?v=1792599180&o=1792596660" alt="Эллина Александровна Ермакова в красной шляпе" width="1280" height="1280" loading="lazy">
+        <img decoding="async" src="images/people/ellina-cut.webp?v=1792680082&o=1792596660" alt="Эллина Александровна Ермакова в красной шляпе" width="1280" height="1280" loading="lazy">
       </div>
       <div class="founder__text">
         <div class="eyebrow">Создатель «Райского сада» · Человек за проектом</div>
@@ -285,17 +286,17 @@
       </header>
       <div class="screens">
         <article class="scr scr--a is-on" data-n="01" tabindex="0">
-          <img class="scr__detail" src="images/space/hall.webp?v=1792605886" alt="" loading="lazy" width="900" height="1200">
+          <img decoding="async" class="scr__detail" src="images/space/hall.webp?v=1792680082" alt="" loading="lazy" width="900" height="1200">
           <span class="scr__vt">Зал событий</span>
           <div class="scr__body"><span class="scr__cap">Зал событий</span><h3>Здесь проходит <em>вся программа</em></h3><p>Светлый зал для мастер-классов, кинопоказов, клубов и женских вечеров. Здесь проходит вся программа сада.</p></div>
         </article>
         <article class="scr scr--b" data-n="02" tabindex="0">
-          <img class="scr__detail" src="images/space/cafe.webp?v=1792605886" alt="" loading="lazy" width="900" height="1200">
+          <img decoding="async" class="scr__detail" src="images/space/cafe.webp?v=1792680082" alt="" loading="lazy" width="900" height="1200">
           <span class="scr__vt">Кофейня</span>
           <div class="scr__body"><span class="scr__cap">Кофейня</span><h3>Кофе <em>до и после</em></h3><p>Кофе, чай и десерты до встречи, после неё или просто так. Деревянные столы, бордовые кресла и место, где удобно поговорить с подругой.</p></div>
         </article>
         <article class="scr scr--c" data-n="03" tabindex="0">
-          <img class="scr__detail" src="images/space/cabinet.webp?v=1792605886" alt="" loading="lazy" width="900" height="1200">
+          <img decoding="async" class="scr__detail" src="images/space/cabinet.webp?v=1792680082" alt="" loading="lazy" width="900" height="1200">
           <span class="scr__vt">Кабинет</span>
           <div class="scr__body"><span class="scr__cap">Кабинет по часам</span><h3>Тихо <em>и&nbsp;отдельно</em></h3><p>Отдельный уютный кабинет для частной практики: психологам, тарологам, коучам, для деловых встреч и переговоров. Бронирование по часам, в будни и утром.</p><a class="sq-btn sq-btn--milk" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Узнать условия</a></div>
         </article>
@@ -307,8 +308,8 @@
   <!-- Экспертам -->
   <section class="grow" id="experts">
     <picture class="grow__bg">
-      <source srcset="images/experts/vase-sm.webp?v=1792607267" media="(max-width: 960px)">
-      <img src="images/experts/vase.webp?v=1792607267" alt="Ветви цветущей яблони с плодами в белой керамической вазе" width="1672" height="941" loading="lazy">
+      <source srcset="images/experts/vase-sm.webp?v=1792680082" media="(max-width: 960px)">
+      <img decoding="async" src="images/experts/vase.webp?v=1792680082" alt="Ветви цветущей яблони с плодами в белой керамической вазе" width="1672" height="941" loading="lazy">
     </picture>
     <div class="wrap grow__inner">
       <header class="grow__head">
@@ -371,8 +372,8 @@
         </div>
       </div>
       <div class="faq3__media" aria-hidden="true">
-        <video class="faq3__vid" muted playsinline webkit-playsinline preload="metadata" poster="video/safflower-first.webp?v=1792662369" data-end="video/safflower-last.webp?v=1792662369">
-          <source src="video/safflower.mp4?v=1792662369" type="video/mp4">
+        <video class="faq3__vid" muted playsinline webkit-playsinline preload="none" poster="video/safflower-first.webp?v=1792680082" data-end="video/safflower-last.webp?v=1792680082">
+          <source src="video/safflower.mp4?v=1792680082" type="video/mp4">
         </video>
       </div>
     </div>
@@ -397,10 +398,10 @@
         </nav>
         <p class="finale__note">* Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в России.</p>
       </div>
-      <figure class="finale__art"><img src="images/footer/branch-cut.webp?v=1792659243" alt="Цветущая ветка яблони с красным яблоком" width="1122" height="1121" loading="lazy"></figure>
+      <figure class="finale__art"><img decoding="async" src="images/footer/branch-cut.webp?v=1792680082" alt="Цветущая ветка яблони с красным яблоком" width="1122" height="1121" loading="lazy"></figure>
     </div>
     <div class="finale__bottom">
-      <a class="finale__logo" href="#hero"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"><span>Райский сад</span></a>
+      <a class="finale__logo" href="#hero"><img decoding="async" src="assets/logo-emblem.webp" alt="" width="360" height="186"><span>Райский сад</span></a>
       <nav class="finale__nav" aria-label="Разделы">
         <a href="#about">О пространстве</a><a href="#formats">Форматы</a><a href="#calendar">Афиша</a><a href="#clubs">Клубы</a><a href="#space">Пространство</a><a href="#experts">Экспертам</a><a href="#faq">Вопросы</a>
       </nav>
@@ -417,6 +418,6 @@
   </div>
 </div>
 
-<script src="script.js?v=1792672368"></script>
+<script src="script.js?v=1792680082"></script>
 </body>
 </html>

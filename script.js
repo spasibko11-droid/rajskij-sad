@@ -46,12 +46,12 @@ const SIGNUP_TG = 'https://t.me/rayskiysad_golitsyno';
 const TIER_LABELS = ['До 15 ноября', 'После открытия'];
 // живописные постеры к событиям: добавляйте путь, когда картина готова
 const POSTERS = {
-  lilu: 'images/posters/lilu.webp?v=1792594625',
-  brooch: 'images/posters/brooch.webp?v=1792594625',
-  selfesteem: 'images/posters/selfesteem.webp?v=1792594625',
-  sweets: 'images/posters/sweets.webp?v=1792604164',
-  english: 'images/posters/english.webp?v=1792605067',
-  photoday: 'images/posters/photoday.webp?v=1792604164',
+  lilu: 'images/posters/lilu.webp?v=1792680082',
+  brooch: 'images/posters/brooch.webp?v=1792680082',
+  selfesteem: 'images/posters/selfesteem.webp?v=1792680082',
+  sweets: 'images/posters/sweets.webp?v=1792680082',
+  english: 'images/posters/english.webp?v=1792680082',
+  photoday: 'images/posters/photoday.webp?v=1792680082',
 };
 
 const FILTERS = ['Все встречи', 'Творчество', 'Для себя', 'Игры', 'Английский', 'Психология', 'Кино и книги', 'Женские вечера', 'Эксперты'];
@@ -436,6 +436,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
     io.disconnect();
+    v.preload = 'auto';
     v.play().catch(() => { v.poster = v.dataset.end; });
   }), { threshold: .45 });
   v.addEventListener('ended', () => { v.poster = v.dataset.end; }, { once: true });
@@ -463,15 +464,15 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
   disc.innerHTML = `<defs>
       <radialGradient id="wheelRim"><stop offset="0.885" stop-color="#000"/><stop offset="0.9" stop-color="#fff"/></radialGradient>
       <mask id="wheelMask"><circle r="200" fill="url(#wheelRim)"/></mask>
-      <filter id="wheelGrain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .08 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+      
     </defs>` +
     PRIZES.map((p, i) => {
       const [x0, y0] = pt(i * step, R), [x1, y1] = pt((i + 1) * step, R);
       return `<path d="M0 0L${x0} ${y0}A${R} ${R} 0 0 1 ${x1} ${y1}Z" fill="${COLORS[i % 4]}"/>`;
     }).join('') +
-    `<circle r="${R}" fill="#000" filter="url(#wheelGrain)"/>` +
+    
     PRIZES.map((p, i) => { const [x, y] = pt(i * step, R); return `<line x1="0" y1="0" x2="${x}" y2="${y}" stroke="#B8964E" stroke-width="1.2" opacity=".85"/>`; }).join('') +
-    `<image href="images/wheel/wheel.webp?v=1792658413" x="-200" y="-200" width="400" height="400" mask="url(#wheelMask)"/>` +
+    `<image href="images/wheel/wheel.webp?v=1792680082" x="-200" y="-200" width="400" height="400" mask="url(#wheelMask)"/>` +
     PRIZES.map((p, i) => {
       const mid = i * step + step / 2, fg = i % 2 === 0 ? '#F7ECE8' : '#5A0F22';
       return `<g transform="rotate(${mid - 90}) translate(100 0)"><text text-anchor="middle" fill="${fg}">
