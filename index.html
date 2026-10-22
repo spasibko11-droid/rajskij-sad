@@ -3,51 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Райский сад · Место, где с вами что-нибудь случается</title>
-<meta name="description" content="Попробуйте другую жизнь. «Райский сад» в Голицыно: вечера, где вы на три часа становитесь режиссёром, коллекционером или автором, программа «Никогда раньше» и аренда пространства.">
+<title>Райский сад · пространство заботы и творчества в Голицыно</title>
+<meta name="description" content="«Райский сад» в Голицыно: мастер-классы, разговоры о важном, кино и книжные вечера, встречи с экспертами и клубы по интересам. Открываем двери 15 ноября.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=1790686670">
-<link rel="preload" as="image" href="images/garden/bg.webp" imagesrcset="images/garden/bg-sm.webp 640w, images/garden/bg.webp 1122w" imagesizes="(max-width: 960px) 100vw, 66vw">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Tenor+Sans&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1792662650">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
-
-<!--
-  ФОТО: чтобы поставить снимок, положите файл в папку images/
-  и вставьте внутрь нужного блока .media тег <img src="images/имя.jpg" alt="описание">.
-  Пока <img> нет, блок показывает подпись-заглушку из data-ph.
--->
+<body class="page-film">
 
 <header class="header" id="header">
   <div class="wrap header__inner">
     <nav class="nav nav--left" id="navLeft" aria-label="Основное меню">
       <a href="#about">О пространстве</a>
-      <a href="#roles">Другая жизнь</a>
-      <a href="#never">Никогда раньше</a>
+      <a href="#formats">Форматы</a>
+      <a href="#calendar">Афиша</a>
     </nav>
     <a href="#top" class="brand" aria-label="Райский сад, на главную">
-      <img class="brand__logo" id="brandLogo" src="assets/logo-emblem.webp" alt="" width="360" height="186">
-      <script>
-        // знак меняется при каждом визите
-        (function () {
-          var v = ['classic', 'line', 'letters', 'bird', 'child'], i = 0;
-          try { i = (parseInt(localStorage.getItem('rs-emblem') || '-1', 10) + 1) % v.length; localStorage.setItem('rs-emblem', i); } catch (e) {}
-          var img = document.getElementById('brandLogo');
-          img.dataset.i = i;
-          if (i) { img.src = 'assets/emblem/' + v[i] + '.webp'; img.width = 320; img.height = 320; }
-        })();
-      </script>
+      <img class="brand__logo" src="assets/logo-round.webp" alt="" width="192" height="192">
+      <span class="brand__text">
+        <span class="brand__name">Райский сад</span>
+        <span class="brand__tag">Пространство заботы и творчества</span>
+      </span>
     </a>
     <div class="header__right">
       <nav class="nav nav--right" id="navRight" aria-label="Дополнительное меню">
-        <a href="#person">Человек месяца</a>
-        <a href="#rent">Аренда</a>
+        <a href="#space">Кофейня и кабинет</a>
+        <a href="#experts">Экспертам</a>
         <a href="#contacts">Контакты</a>
       </nav>
-      <a href="#booking" class="btn btn--outline btn--sm header__cta">Забронировать</a>
+      <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener" class="btn btn--outline btn--sm header__cta">Ваши идеи</a>
       <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="navLeft navRight"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -55,348 +42,381 @@
 
 <main id="top">
 
-  <!-- Главный экран -->
-  <section class="wrap hero has-deco" id="hero">
-    <div class="petals" id="petals" aria-hidden="true"></div>
-    <img class="deco deco--hero-left" src="images/deco/branch-left.webp" alt="" aria-hidden="true">
-    <div class="hero__text">
-      <div class="eyebrow hero__eyebrow"><span class="star">✦</span>Попробуйте другую жизнь</div>
-      <h1 class="hero__title" aria-label="Райский сад"><span aria-hidden="true">Райский</span><span aria-hidden="true">сад</span></h1>
-      <p class="hero__role">Сегодня вы <span class="hero__role-word" id="roleWord">режиссёр</span></p>
-      <p class="hero__lead">Место, где с вами что-нибудь случается. За один вечер вы снимаете кино, собираете коллекцию или пишете книгу и уходите с тем, что сделали сами.</p>
-      <div class="hero__actions">
-        <a href="#roles" class="btn btn--primary">Выбрать, кем стать <span>→</span></a>
-      </div>
-      <div class="hero__facts">
-        <div class="fact"><span class="fact__icon"><svg class="fact__svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12.5" r="8.5"/><path d="M12 7.5v5l3.2 2"/><path class="fact__accent" d="M12 1.6l.5 1.4 1.4.5-1.4.5-.5 1.4-.5-1.4-1.4-.5 1.4-.5z"/></svg></span><div><div class="fact__title">3 часа</div><div class="fact__sub">одна другая жизнь</div></div></div>
-        <div class="fact"><span class="fact__icon"><svg class="fact__svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.7 3.8 2.7 5.8 6.5 6.5-3.8.7-5.8 2.7-6.5 6.5-.7-3.8-2.7-5.8-6.5-6.5 3.8-.7 5.8-2.7 6.5-6.5z"/><path class="fact__accent" d="M18.5 15.5l.45 1.3 1.3.45-1.3.45-.45 1.3-.45-1.3-1.3-.45 1.3-.45z"/><path class="fact__accent fact__accent--soft" d="M5.5 16.5l.35 1 1 .35-1 .35-.35 1-.35-1-1-.35 1-.35z"/></svg></span><div><div class="fact__title">Первый раз</div><div class="fact__sub">каждую неделю</div></div></div>
-        <div class="fact"><span class="fact__icon"><svg class="fact__svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20.5V11a7 7 0 0 1 14 0v9.5"/><path d="M3 20.5h18"/><path class="fact__accent" d="M12 19c-.1-3.4 1.6-5.7 4-6.5 0 3.2-1.6 5.5-4 6.5z"/><path class="fact__accent fact__accent--soft" d="M12 19c-.4-2.2-1.6-3.6-3.1-4 .1 2 1.2 3.3 3.1 4z"/></svg></span><div><div class="fact__title">Голицыно</div><div class="fact__sub">Советская, 59А</div></div></div>
-      </div>
+  <!-- Главный экран: цветущие ветки на бордовом фоне -->
+  <section class="hero hero--film hero--burg hero--kling" id="hero">
+    <div class="hero__stage" id="garden" aria-hidden="true">
+      <video class="hero__vid hero__vid--bg" data-rate="1" muted playsinline webkit-playsinline preload="auto" poster="video/kling-bg-first.webp?v=1792516832" data-end="video/kling-bg-last.webp?v=1792516832">
+        <source src="video/kling-bg-sm.mp4?v=1792516832" type="video/mp4" media="(max-width: 900px)">
+        <source src="video/kling-bg.mp4?v=1792516832" type="video/mp4">
+      </video>
     </div>
-    <div class="hero__visual">
-      <div class="hero__art">
-      <div class="hero__photo garden" id="garden">
-        <div class="garden__layer garden__layer--bg" data-mouse="8" data-scroll=".12">
-          <img class="garden__img" src="images/garden/bg.webp" srcset="images/garden/bg-sm.webp 640w, images/garden/bg.webp 1122w" sizes="(max-width: 960px) 100vw, 66vw" alt="Цветущий сад в утреннем свете" fetchpriority="high">
+    <div class="wrap hero__layout hero__layout--burg">
+      <h1 class="hero__title">
+        <span class="hero__l1">Место, где есть</span>
+        <em class="hero__l2"><span>время</span><span>для&nbsp;себя.</span></em>
+      </h1>
+      <div class="hero__side">
+        <p class="hero__lead">Мастер-классы, разговоры о важном, кино и книжные вечера, встречи с экспертами и клубы по интересам.</p>
+        <div class="hero__btns">
+          <a href="#calendar" class="btn-sq btn-sq--white">Посмотреть афишу <span aria-hidden="true">→</span></a>
+          <a href="#formats" class="btn-sq btn-sq--wline">Найти свой формат</a>
         </div>
-        <div class="garden__layer garden__layer--mid" data-mouse="18" data-scroll=".05">
-          <img class="garden__img" src="images/garden/mid.webp" srcset="images/garden/mid-sm.webp 640w, images/garden/mid.webp 1122w" sizes="(max-width: 960px) 100vw, 66vw" alt="">
-        </div>
-        <div class="garden__light" aria-hidden="true"></div>
-        <div class="garden__layer garden__layer--fg" data-mouse="34" data-scroll="-.06">
-          <img class="garden__img" src="images/garden/fg.webp" srcset="images/garden/fg-sm.webp 640w, images/garden/fg.webp 1122w" sizes="(max-width: 960px) 100vw, 66vw" alt="">
-        </div>
+        <p class="hero__pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Голицыно, ул. Советская, 59А</p>
       </div>
-      </div>
+      <a href="#calendar" class="hero__kick hero__badge" aria-label="Открываем двери 15 ноября, смотреть афишу"><span>Открываемся</span><b>15</b><span>ноября</span></a>
     </div>
   </section>
+
+  <!-- Бегущая строка -->
+  <div class="ticker ticker--wine" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Мастер-классы</span><i>✧</i><span>Разговоры о важном</span><i>✧</i><span>Кино и книжные вечера</span><i>✧</i><span>Встречи с экспертами</span><i>✧</i><span>Клубы по интересам</span><i>✧</i><span>Кофейня и десерты</span><i>✧</i>
+      <span>Мастер-классы</span><i>✧</i><span>Разговоры о важном</span><i>✧</i><span>Кино и книжные вечера</span><i>✧</i><span>Встречи с экспертами</span><i>✧</i><span>Клубы по интересам</span><i>✧</i><span>Кофейня и десерты</span><i>✧</i>
+    </div>
+  </div>
 
   <!-- О пространстве -->
-  <section class="wrap about has-deco" id="about">
-    <img class="deco deco--about-left" src="images/deco/branch-right.webp" alt="" aria-hidden="true" loading="lazy">
-    <div class="media about__photo">
-      <img src="images/about/about.webp" srcset="images/about/about-sm.webp 720w, images/about/about.webp 1400w" sizes="(max-width: 960px) 92vw, 45vw" alt="Стол у окна: старые книги, чашка чая, яблоки, пионы и жасмин, раскрытый скетчбук с акварелью" loading="lazy" width="1400" height="1120">
-      <span class="about__caption">Больше, чем пространство</span>
+  <section class="about2" id="about">
+    <div class="wrap about2__grid">
+      <div class="about2__media">
+        <img class="about2__bowl" src="images/about2/bowl.webp?v=1792528113" srcset="images/about2/bowl-sm.webp?v=1792528113 720w, images/about2/bowl.webp?v=1792528113 1122w" sizes="(max-width: 960px) 92vw, 40vw" alt="Каменная чаша с красными яблоками и оливковой ветвью в солнечном свете" width="1122" height="1402" loading="lazy">
+      </div>
+      <div class="about2__text">
+        <div class="eyebrow">О пространстве</div>
+        <h2 class="h2 about2__title">Больше поводов <em>жить интересно</em></h2>
+        <p class="about2__lead">«Райский сад»: пространство заботы и творчества в Голицыно. Здесь будут проходить мастер-классы, клубные встречи, разговоры с психологами и экспертами, кино и книжные вечера.</p>
+        <p class="about2__lead">За красивым вечером больше не нужно ехать в Москву. Можно прийти одной или с подругой, выбрать занятие под настроение, познакомиться с теми, кто рядом, и подарить себе пару часов без бытовых ролей.</p>
+        <p class="about2__lead">Программу ведёт команда сада вместе с приглашёнными мастерами и специалистами. Большинство встреч проходит по выходным и в будние вечера, а кофе и десерты ждут в нашей кофейне.</p>
+      </div>
     </div>
-    <div class="about__text">
-      <div class="eyebrow">О пространстве</div>
-      <h2 class="h2 about__title">Здесь нельзя <em>просто посмотреть</em></h2>
-      <p class="lead">«Райский сад» в Голицыно придуман для тех, кому интересно попробовать себя в новом. Каждый вечер здесь заканчивается тем, что вы сделали сами: сценой, коллекцией, рассказом или решением.</p>
-      <p class="lead">Мы собираем небольшие группы, зовём людей, которые умеют то, чего вы ещё не пробовали, и даём три часа, чтобы прожить чужую профессию или чужой взгляд на мир.</p>
-      <ul class="rules" aria-label="Как у нас принято">
-        <li><span>Посмотрели фильм</span><em>меняем финал</em></li>
-        <li><span>Пришёл художник</span><em>рисуют гости</em></li>
-        <li><span>Пришёл писатель</span><em>к концу вечера готов рассказ</em></li>
-        <li><span>Говорим о старости</span><em>пишем письмо себе в 80</em></li>
-        <li><span>Обсуждаем город</span><em>делаем что-то для Голицыно</em></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 24 часа другой жизни -->
-  <section class="wrap section has-deco" id="roles">
-    <img class="deco deco--formats-right" src="images/deco/branch-right.webp" alt="" aria-hidden="true" loading="lazy">
-    <div class="dirs-head">
-      <h2 class="h2 dirs-head__title">24 часа <em>другой жизни</em></h2>
-      <p class="dirs-head__text">Каждый месяц пространство превращается в другую реальность. Выберите роль и проживите её за один вечер.</p>
-    </div>
-    <div class="roles">
-      <article class="role">
-        <div class="media role__photo"><img src="images/roles/director.webp" alt="Съёмочная площадка в зале: камера, свет, актёры и хлопушка" loading="lazy" width="640" height="800"></div>
-        <div class="role__body">
-          <div class="role__kicker">Сегодня вы</div>
-          <h3 class="role__title">Режиссёр</h3>
-          <p class="role__text">Актёры, пространство и тема. За три часа группа снимает короткую сцену.</p>
-          <p class="role__result"><span>В финале</span>премьера вашего фильма</p>
-        </div>
-      </article>
-      <article class="role">
-        <div class="media role__photo"><img src="images/roles/collector.webp" alt="Гости рассматривают картины молодых художников на мольбертах" loading="lazy" width="640" height="800"></div>
-        <div class="role__body">
-          <div class="role__kicker">Сегодня вы</div>
-          <h3 class="role__title">Коллекционер</h3>
-          <p class="role__text">Десять работ молодых художников и условные 100 000 рублей на всех. Собираете свою коллекцию и защищаете выбор.</p>
-          <p class="role__result"><span>В финале</span>своя коллекция и речь в её защиту</p>
-        </div>
-      </article>
-      <article class="role">
-        <div class="media role__photo"><img src="images/roles/salon.webp" alt="Салонный ужин при свечах: гости за круглым столом увлечены разговором" loading="lazy" width="640" height="800"></div>
-        <div class="role__body">
-          <div class="role__kicker">Сегодня вы</div>
-          <h3 class="role__title">Хозяйка салона 1913 года</h3>
-          <p class="role__text">За столом философ, предприниматель, художник и музыкант. У каждого роль и вопрос, на который нельзя ответить поверхностно.</p>
-          <p class="role__result"><span>В финале</span>вечер, который вы провели сами</p>
-        </div>
-      </article>
-      <article class="role">
-        <div class="media role__photo"><img src="images/roles/artdirector.webp" alt="Группа у пустой светлой стены, на столе эскизы и образцы красок" loading="lazy" width="640" height="800"></div>
-        <div class="role__body">
-          <div class="role__kicker">Сегодня вы</div>
-          <h3 class="role__title">Арт-директор</h3>
-          <p class="role__text">Пустая стена «Райского сада» и бюджет. К концу вечера группа решает, что на ней появится.</p>
-          <p class="role__result"><span>В финале</span>ваше решение на нашей стене</p>
-        </div>
-      </article>
-      <article class="role">
-        <div class="media role__photo"><img src="images/roles/author.webp" alt="Стол автора: печатная машинка, рукописные страницы и маленькая книга" loading="lazy" width="640" height="800"></div>
-        <div class="role__body">
-          <div class="role__kicker">Сегодня вы</div>
-          <h3 class="role__title">Автор</h3>
-          <p class="role__text">Приходите без текста. Пишем, редактируем, верстаем, отправляем в печать.</p>
-          <p class="role__result"><span>В финале</span>напечатанная маленькая книга</p>
-        </div>
-      </article>
-    </div>
+    <ol class="wrap growth growth--wide">
+          <li class="growth__item">
+            <img class="growth__ico" src="images/about2/p1.webp?v=1792580997" alt="Открытка с оливковой веточкой" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">01</span>Внимание к&nbsp;человеку</h3>
+            <p class="growth__text">Уважение к вашему темпу, интересам и опыту.</p></div>
+          </li>
+          <li class="growth__item">
+            <img class="growth__ico" src="images/about2/p2.webp?v=1792580997" alt="Глиняная чаша ручной работы" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">02</span>Участие вместо наблюдения</h3>
+            <p class="growth__text">Обсуждать, пробовать и создавать что-то своё.</p></div>
+          </li>
+          <li class="growth__item">
+            <img class="growth__ico" src="images/about2/p3.webp?v=1792580997" alt="Старинный ключ с бордовой лентой" width="360" height="360" loading="lazy"><div><h3 class="growth__title"><span class="growth__n">03</span>Среда, в которую хочется вернуться</h3>
+            <p class="growth__text">Знакомые лица, новые темы и ощущение общности.</p></div>
+          </li>
+        </ol>
   </section>
 
   <!-- Форматы -->
-  <section class="wrap section has-deco" id="formats">
+  <div class="formats2-bg">
+  <section class="formats2" id="formats">
+    <div class="wrap">
     <div class="dirs-head">
-      <h2 class="h2 dirs-head__title">Где попробовать себя <span class="star">✦</span></h2>
-      <p class="dirs-head__text">Шесть направлений, из которых мы собираем каждую другую жизнь и каждый первый раз.</p>
-    </div>
-    <div class="dirs">
-      <a href="#booking" class="dir">
-        <img class="dir__icon" src="images/icons/art.webp" alt="" loading="lazy" width="360" height="360">
-        <span class="dir__title">Творчество<br>и искусство</span>
-      </a>
-      <a href="#booking" class="dir">
-        <img class="dir__icon" src="images/icons/psychology.webp" alt="" loading="lazy" width="360" height="360">
-        <span class="dir__title">Психология<br>и осознанность</span>
-      </a>
-      <a href="#booking" class="dir">
-        <img class="dir__icon" src="images/icons/beauty.webp" alt="" loading="lazy" width="360" height="360">
-        <span class="dir__title">Красота<br>и стиль</span>
-      </a>
-      <a href="#booking" class="dir">
-        <img class="dir__icon" src="images/icons/lectures.webp" alt="" loading="lazy" width="360" height="360">
-        <span class="dir__title">Лекции<br>и дискуссии</span>
-      </a>
-      <a href="#booking" class="dir">
-        <img class="dir__icon" src="images/icons/music.webp" alt="" loading="lazy" width="360" height="360">
-        <span class="dir__title">Музыка<br>и поэзия</span>
-      </a>
-      <a href="#booking" class="dir">
-        <img class="dir__icon" src="images/icons/people.webp" alt="" loading="lazy" width="360" height="360">
-        <span class="dir__title">Новые<br>знакомства</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- Никогда раньше -->
-  <section class="never" id="never">
-    <div class="wrap section never__inner">
-      <div class="never__text">
-        <div class="eyebrow">Программа</div>
-        <h2 class="h2 never__title">Никогда <em>раньше</em></h2>
-        <p class="lead">Каждую неделю одно дело, за которое вы ещё ни разу не брались. Первые разы складываются в коллекцию, и у неё есть свой паспорт.</p>
-        <p class="never__hint">Отметьте, чего вы никогда не делали:</p>
-        <div class="firsts" id="firsts">
-          <button type="button" class="first" aria-pressed="false" data-i="0">Дирижировать оркестром</button>
-          <button type="button" class="first" aria-pressed="false" data-i="1">Писать обнажённую натуру</button>
-          <button type="button" class="first" aria-pressed="false" data-i="2">Встать за диджейский пульт</button>
-          <button type="button" class="first" aria-pressed="false" data-i="3">Снять кино</button>
-          <button type="button" class="first" aria-pressed="false" data-i="4">Станцевать танго с незнакомцем</button>
-          <button type="button" class="first" aria-pressed="false" data-i="5">Сделать свои духи</button>
-          <button type="button" class="first" aria-pressed="false" data-i="6">Выступить пять минут со сцены</button>
-          <button type="button" class="first" aria-pressed="false" data-i="7">Вылепить человеческое лицо</button>
-          <button type="button" class="first" aria-pressed="false" data-i="8">Готовить вместе с шефом</button>
-          <button type="button" class="first" aria-pressed="false" data-i="9">Записать песню</button>
-          <button type="button" class="first" aria-pressed="false" data-i="10">Играть в импровизационном театре</button>
-        </div>
-      </div>
-      <div class="passport" aria-live="polite">
-        <div class="passport__cover">
-          <img class="passport__emblem" src="assets/logo-emblem.webp" alt="" width="360" height="186" loading="lazy">
-          <div class="passport__title">Паспорт Райского сада</div>
-          <div class="passport__sub">Мои первые разы</div>
-        </div>
-        <div class="passport__page">
-          <div class="passport__count"><span id="firstsCount">0</span> <span id="firstsWord">первых разов</span> впереди</div>
-          <div class="stamps" id="stamps"></div>
-          <p class="passport__empty" id="stampsEmpty">Отметьте хотя бы одно, и здесь появится штамп</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Человек месяца -->
-  <section class="wrap section person" id="person">
-    <div class="media person__photo" data-ph="портрет человека месяца"></div>
-    <div class="person__text">
-      <div class="eyebrow">Человек месяца <span class="person__tag">пример программы</span></div>
-      <h2 class="h2 person__title">Мир глазами <em>стоматолога</em></h2>
-      <p class="lead">Раз в месяц мы отдаём «Райский сад» одному человеку. Он выбирает всё, из чего сложится месяц, а вы смотрите на мир его глазами.</p>
-      <ol class="picks">
-          <li class="pick"><span class="pick__n">01</span><span class="pick__label">Фильм</span><span class="pick__hint">который он пересматривает</span></li>
-          <li class="pick"><span class="pick__n">02</span><span class="pick__label">Книга</span><span class="pick__hint">которая изменила его работу</span></li>
-          <li class="pick"><span class="pick__n">03</span><span class="pick__label">Музыка</span><span class="pick__hint">под которую он думает</span></li>
-          <li class="pick"><span class="pick__n">04</span><span class="pick__label">Гость</span><span class="pick__hint">человек, которого он хочет вам представить</span></li>
-          <li class="pick"><span class="pick__n">05</span><span class="pick__label">Тема</span><span class="pick__hint">разговор без поверхностных ответов</span></li>
-          <li class="pick"><span class="pick__n">06</span><span class="pick__label">Блюдо</span><span class="pick__hint">вкус его детства</span></li>
-          <li class="pick"><span class="pick__n">07</span><span class="pick__label">Произведение</span><span class="pick__hint">одна вещь, которую стоит увидеть</span></li>
-          <li class="pick"><span class="pick__n">08</span><span class="pick__label">Эксперимент</span><span class="pick__hint">задание для гостей</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Меняющийся знак -->
-  <section class="wrap section identity" id="identity">
-    <div class="identity__text">
-      <div class="eyebrow">Айдентика</div>
-      <h2 class="h2">Знак, который <em>меняется</em></h2>
-      <p class="lead">Сегодня яблоко нарисовал ребёнок. Завтра его собрали из букв. Послезавтра от яблока осталась одна птица. Знак в шапке меняется при каждом вашем визите, как меняется и само пространство.</p>
-      <p class="identity__hint">Выберите, каким знак будет сегодня</p>
-    </div>
-    <ul class="emblems" id="emblems">
-        <li><button type="button" class="emblem" data-i="0" aria-pressed="false">
-          <span class="emblem__pic"><img src="assets/emblem/classic.webp" alt="" width="360" height="186" loading="lazy"></span>
-          <span class="emblem__name">С него всё началось</span><span class="emblem__hint">Яблоко и две колибри</span>
-        </button></li>
-        <li><button type="button" class="emblem" data-i="1" aria-pressed="false">
-          <span class="emblem__pic"><img src="assets/emblem/line.webp" alt="" width="315" height="320" loading="lazy"></span>
-          <span class="emblem__name">Одним движением</span><span class="emblem__hint">Перо ни разу не оторвалось от листа</span>
-        </button></li>
-        <li><button type="button" class="emblem" data-i="2" aria-pressed="false">
-          <span class="emblem__pic"><img src="assets/emblem/letters.webp" alt="" width="319" height="320" loading="lazy"></span>
-          <span class="emblem__name">Сложено из слов</span><span class="emblem__hint">Весь алфавит в одном яблоке</span>
-        </button></li>
-        <li><button type="button" class="emblem" data-i="3" aria-pressed="false">
-          <span class="emblem__pic"><img src="assets/emblem/bird.webp" alt="" width="320" height="313" loading="lazy"></span>
-          <span class="emblem__name">Яблоко уже съели</span><span class="emblem__hint">Колибри прилетела и осталась</span>
-        </button></li>
-        <li><button type="button" class="emblem" data-i="4" aria-pressed="false">
-          <span class="emblem__pic"><img src="assets/emblem/child.webp" alt="" width="320" height="319" loading="lazy"></span>
-          <span class="emblem__name">Детской рукой</span><span class="emblem__hint">Мелками, как получилось</span>
-        </button></li>
-    </ul>
-  </section>
-
-  <!-- Галерея -->
-  <section class="wrap gallery-section has-deco" id="gallery">
-    <img class="deco deco--gallery-left" src="images/deco/branch-left.webp" alt="" aria-hidden="true" loading="lazy">
-    <div class="gallery-head">
-      <h2 class="h2">Вдохновляющие моменты</h2>
-      <p>Люди, события и атмосфера «Райского сада»</p>
-    </div>
-    <div class="gallery">
-      <div class="media tall"><img src="images/gallery/hall.webp" alt="Светлый зал с арочными окнами, длинным столом и цветами" loading="lazy" width="760" height="1140"></div>
-      <div class="media"><img src="images/gallery/workshop.webp" alt="Мастер-класс: рисуем акварелью яблоко в скетчбуке" loading="lazy" width="760" height="760"></div>
-      <div class="media"><img src="images/gallery/books.webp" alt="Стопка старых книг с красным яблоком и цветком яблони" loading="lazy" width="760" height="760"></div>
-      <div class="media tall"><img src="images/gallery/guests.webp" alt="Гости за длинным столом с чаем и цветами" loading="lazy" width="760" height="1140"></div>
-      <div class="media"><img src="images/gallery/flowers.webp" alt="Букет пионов, роз и жасмина в фарфоровом кувшине" loading="lazy" width="760" height="760"></div>
-      <div class="media"><img src="images/gallery/candles.webp" alt="Вечер при свечах: стол с чаем, лепестки роз и пианино" loading="lazy" width="760" height="760"></div>
-    </div>
-  </section>
-
-  <!-- Аренда -->
-  <section class="rent" id="rent">
-    <div class="wrap section rent__inner">
-      <div class="rent__text">
-        <div class="eyebrow">Ваше событие в «Райском саду»</div>
-        <h2 class="h2">Аренда пространства</h2>
-        <p class="lead">Проводите свои мероприятия в атмосферном и вдохновляющем месте. Мы поможем с организацией и сделаем всё, чтобы ваш день был особенным.</p>
-        <ul class="rent__list">
-          <li>Дни рождения и частные события</li>
-          <li>Корпоративные мероприятия</li>
-          <li>Фотосъёмки и съёмки контента</li>
-          <li>Лекции и мастер-классы</li>
-        </ul>
-        <a href="#booking" class="btn btn--light">Оставить заявку →</a>
-      </div>
-      <div class="media rent__photo"><img src="images/rent/rent.webp" srcset="images/rent/rent-sm.webp 560w, images/rent/rent.webp 1000w" sizes="(max-width: 960px) 92vw, 45vw" alt="Зал с арочным окном, подготовленный к лекции: ряды кресел, стол с цветами и мольберт с картиной" loading="lazy" width="1000" height="1250"></div>
-    </div>
-  </section>
-
-  <!-- Заявка -->
-  <section class="wrap section" id="booking">
-    <div class="booking">
-      <img class="deco deco--booking-corner deco--front" src="images/deco/blossom-corner.webp" alt="" aria-hidden="true" loading="lazy">
-      <div class="booking__intro">
-        <img class="booking__logo" src="assets/logo-full.webp" alt="Райский сад" width="720" height="635" loading="lazy">
-        <div>
-          <h2 class="h2 booking__title">Запишитесь <em>на другую жизнь</em></h2>
-          <p>Выберите вечер, программу или забронируйте пространство для своего события</p>
-        </div>
-      </div>
       <div>
-        <form class="form" id="bookingForm">
-          <input class="field full" name="name" required placeholder="Ваше имя" autocomplete="name">
-          <input class="field" name="phone" type="tel" required placeholder="Телефон" autocomplete="tel">
-          <input class="field" name="date" type="date" aria-label="Дата">
-          <select class="field full" name="type" aria-label="Формат события">
-            <option>24 часа другой жизни</option>
-            <option>Никогда раньше</option>
-            <option>Человек месяца</option>
-            <option>Аренда: день рождения или частное событие</option>
-            <option>Аренда: корпоративное мероприятие</option>
-            <option>Аренда: фотосъёмка</option>
-          </select>
-          <textarea class="field full" name="message" rows="3" placeholder="Что хотите попробовать или какое событие планируете"></textarea>
-          <button type="submit" class="btn btn--primary btn--block full">Оставить заявку →</button>
-        </form>
-        <div class="thanks" id="bookingThanks" hidden>
-          <div class="thanks__title">Спасибо!</div>
-          <p>Заявка отправлена. Мы свяжемся с вами в течение дня, чтобы обсудить детали.</p>
-          <button type="button" class="btn btn--ghost btn--sm" id="bookingReset">Отправить ещё одну</button>
-        </div>
+        <div class="eyebrow">Выберите, что вам близко</div>
+        <h2 class="h2 dirs-head__title">У каждой <em>свой повод прийти</em></h2>
+      </div>
+      <p class="dirs-head__text">Программу собираем по вашим ответам в опросе. Часть направлений уже в предварительной афише ноября, остальные запускаем в декабре и январе.</p>
+    </div>
+    <div class="formats">
+      <a href="#calendar" class="format" data-filter-link="Творчество">
+        <span class="format__arch"><img class="format__pic" src="images/formats/f1.webp?v=1792534932" alt="Живопись: женщина у окна рисует акварель" width="800" height="1000" loading="lazy"></span>
+        <span class="format__top"><span class="format__num">01</span><span class="format__kicker">«Сделано мной»</span></span>
+        <span class="format__title">Творческие мастер-классы</span>
+        <span class="format__text">Рисование, рукоделие, вышивка, лепка, кондитерское дело. Пара часов, чтобы поработать руками, отвлечься и унести домой собственную работу. Опыт не нужен.</span>
+        <span class="format__tags"><i>Творчество</i><i>Рукоделие</i><i>Кондитерские встречи</i></span>
+        <span class="format__link">Выбрать мастер-класс →</span>
+      </a>
+      <a href="#calendar" class="format" data-filter-link="Психология">
+        <span class="format__arch"><img class="format__pic" src="images/formats/f2.webp?v=1792531628" alt="Две чашки травяного чая и оливковая веточка на оливковом фоне" width="800" height="1000" loading="lazy"></span>
+        <span class="format__top"><span class="format__num">02</span><span class="format__kicker">«Услышать себя»</span></span>
+        <span class="format__title">Встречи с психологом</span>
+        <span class="format__text">Встречи и воркшопы в малой группе: отношения, личные границы, уверенность, внимание к собственным желаниям. Бережно, без давления и оценок.</span>
+        <span class="format__tags"><i>Психология</i><i>Самооценка</i><i>Внимание к себе</i></span>
+        <span class="format__link">Найти встречу для себя →</span>
+      </a>
+      <a href="#calendar" class="format" data-filter-link="Кино и книги">
+        <span class="format__arch"><img class="format__pic" src="images/formats/f3.webp?v=1792531628" alt="Живописный натюрморт: инжир на страницах старинной книги" width="800" height="1000" loading="lazy"></span>
+        <span class="format__top"><span class="format__num">03</span><span class="format__kicker">«Кино с послевкусием»</span></span>
+        <span class="format__title">Кино и книжный клуб</span>
+        <span class="format__text">Фильм, разговор с ведущей, кофе и десерт. А раз в месяц книжный клуб: одна книга и тёплое обсуждение. Место для обмена впечатлениями и знакомства через общие интересы.</span>
+        <span class="format__tags"><i>Кино</i><i>Книги</i><i>Обсуждения</i></span>
+        <span class="format__link">Культурная афиша →</span>
+      </a>
+      <a href="#calendar" class="format" data-filter-link="Игры">
+        <span class="format__arch"><img class="format__pic" src="images/formats/f4.webp?v=1792581673" alt="Винтажные игральные карты и игральная кость" width="800" height="1000" loading="lazy"></span>
+        <span class="format__top"><span class="format__num">04</span><span class="format__kicker">Попробовать</span></span>
+        <span class="format__title">Игры и самопознание</span>
+        <span class="format__text">Игра «Лилу»: повод исследовать свои желания, увидеть сильные стороны и новые возможности. Небольшая компания, поддержка ведущей и идеи для следующего шага.</span>
+        <span class="format__link">Выбрать игру →</span>
+      </a>
+      <a href="#calendar" class="format" data-filter-link="Женские вечера">
+        <span class="format__arch"><img class="format__pic" src="images/formats/f5.webp?v=1792581673" alt="Букет садовых роз с бордовой лентой" width="800" height="1000" loading="lazy"></span>
+        <span class="format__top"><span class="format__num">05</span><span class="format__kicker">Побыть собой</span></span>
+        <span class="format__title">Женские вечера</span>
+        <span class="format__text">Уютные вечера с темой: красота как сила, стиль, разговоры по душам. Чай, угощение и хорошая компания.</span>
+        <span class="format__link">Ближайшие вечера →</span>
+      </a>
+      <a href="#calendar" class="format" data-filter-link="Эксперты">
+        <span class="format__arch"><img class="format__pic" src="images/formats/f6.webp?v=1792531628" alt="Разрезанное яблоко и латунная лупа на льне" width="800" height="1000" loading="lazy"></span>
+        <span class="format__top"><span class="format__num">06</span><span class="format__kicker">Узнать больше</span></span>
+        <span class="format__title">Встречи с экспертами</span>
+        <span class="format__text">Нутрициолог, стилист, косметолог и другие специалисты. Короткая практическая встреча и ответы на ваши вопросы.</span>
+        <span class="format__link">Встречи с экспертами →</span>
+      </a>
+    </div>
+    <p class="note">Цены ориентировочные, точную стоимость указываем в анонсе каждой встречи.</p>
+    </div>
+  </section>
+  </div>
+
+  <!-- Клубы -->
+  <section class="clubs3" id="clubs">
+    <div class="wrap">
+      <header class="clubs3__head">
+        <div class="eyebrow">Знакомства, которые продолжаются</div>
+        <h2 class="h2">Не одна встреча. <em>Своё сообщество.</em></h2>
+      </header>
+      <div class="clubs3__cards">
+        <article class="inv inv--milk">
+          <div class="inv__logo"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"><small>Приглашение</small></div>
+          <hr>
+          <span class="inv__caps">Клуб разговорного английского</span>
+          <h3>Говорить <em>без страха</em></h3>
+          <p>Понимаете, но стесняетесь говорить? Здесь можно практиковаться, даже если пока не хватает слов. Начнём со знакомства, определим уровень и соберём группы, в которых каждому будет комфортно.</p>
+          <ul><li>Группы по уровням: от первых фраз до уверенного общения</li><li>Практика с носителем языка на темы из жизни</li><li>Можно ошибаться, делать паузы и пробовать снова</li><li>На первой встрече определяем уровень и расписание</li></ul>
+          <a class="inv__btn" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Регистрация в клуб</a>
+          <a class="inv__link" href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener">Мне интересен английский</a>
+          <div class="inv__sign"><img src="images/people/avgustina.webp" alt="Августина, ведущая клуба" width="800" height="960" loading="lazy"><div>Жду вас, Августина<small>Носитель языка, «Центр Магистра»</small></div></div>
+          <div class="inv__seal" aria-label="Готовим запуск">Готовим<i>запуск</i></div>
+        </article>
+        <article class="inv inv--wine">
+          <div class="inv__logo"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"><small>Приглашение</small></div>
+          <hr>
+          <span class="inv__caps">Клуб «Райский сад»</span>
+          <h3>Своё дело <em>среди своих</em></h3>
+          <p>Женское бизнес-сообщество для тех, кто развивает своё дело, управляет командами или готовится к новому профессиональному шагу. Здесь можно обменяться опытом, найти поддержку и партнёров, обсудить задачи бизнеса и познакомиться ближе.</p>
+          <ul><li>Деловые завтраки и ежемесячная закрытая встреча клуба</li><li>Разбор управленческих задач, обмен опытом и полезные знакомства</li><li>Ментор сообщества: Эллина Александровна Ермакова</li><li>Приоритетная запись на мастер-классы и особые условия участия в программе сада</li></ul>
+          <a class="inv__btn" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Хочу в сообщество</a>
+          <div class="inv__seal" aria-label="Готовим запуск">Готовим<i>запуск</i></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Контакты -->
-  <section class="wrap contacts" id="contacts">
-    <div class="contacts__info">
-      <h2 class="h2">Контакты</h2>
-      <div class="contact">
-        <div class="contact__label">Адрес</div>
-        <div class="contact__value">г. Голицыно, ул. Советская, 59А</div>
-      </div>
-      <div class="contact">
-        <div class="contact__label">Телефон</div>
-        <a class="contact__value" href="tel:+79991234567">+7 999 123-45-67</a>
-      </div>
-      <div class="contact">
-        <div class="contact__label">Соцсети</div>
-        <div class="socials">
-          <a href="#">Telegram</a>
-          <a href="#">ВКонтакте</a>
-          <a href="#">Instagram</a>
+  <!-- Афиша -->
+  <section class="afisha" id="calendar">
+    <div class="wrap">
+      <header class="afisha__head">
+        <div class="eyebrow">Ближайшие встречи</div>
+        <h2 class="h2">Ноябрь в <em>«Райском саду»</em></h2>
+        <p>Стоимость зависит от срока оплаты: чем раньше, тем выгоднее. Нажмите на встречу, чтобы узнать подробности и записаться.</p>
+      </header>
+
+      <article class="opening2">
+        <div class="opening2__art"><img src="images/posters/opening.webp?v=1792594625" alt="Живописный натюрморт при свечах" width="800" height="1000" loading="lazy"></div>
+        <div class="opening2__body">
+          <div class="opening2__date"><b>15</b><span>ноября<small>воскресенье · 2026</small></span></div>
+          <div class="opening2__kicker">Начинаем знакомство</div>
+          <h3 class="opening2__title">«Райский сад» <em>открывает свои двери</em></h3>
+          <p>С 15 ноября приглашаем на первые мастер-классы, клубные встречи и вечера. Выбирайте встречу в афише и записывайтесь заранее: до 15 ноября участие стоит дешевле.</p>
+          <p class="opening2__free">Первые встречи по выгодной цене.</p>
+          <div class="opening2__actions">
+            <a href="#events" class="sq-btn sq-btn--milk">Смотреть первые встречи</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="chips chips--words" id="chips" role="tablist" aria-label="Фильтр встреч"></div>
+      <div class="events events--chess" id="events"></div>
+    </div>
+  </section>
+
+  <!-- Колесо фортуны -->
+  <div class="wheel-bg">
+  <section class="wheel" id="wheel">
+    <div class="wrap wheel__grid">
+      <div class="wheel__text">
+        <div class="eyebrow">Подарки к открытию</div>
+        <h2 class="h2">Испытайте <em>удачу в саду</em></h2>
+        <p>Крутите колесо и забирайте подарок: бесплатный мастер-класс, скидку на первую встречу или угощение в нашей кофейне. Одна попытка на каждого гостя.</p>
+        <button type="button" class="sq-btn sq-btn--milk wheel__spin" id="wheelSpin">Крутить колесо</button>
+        <div class="wheel__result" id="wheelResult" aria-live="polite" hidden>
+          <span class="wheel__label">Ваш подарок</span>
+          <b class="wheel__prize" id="wheelPrize"></b>
+          <span class="wheel__code">Промокод: <strong id="wheelCode"></strong></span>
+          <p>Сохраните промокод и назовите его при записи на встречу или в кофейне. Подарок действует до 31 декабря 2026 года.</p>
+          <a class="sq-btn sq-btn--line" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Написать в Telegram</a>
         </div>
       </div>
+      <div class="wheel__stage">
+        <span class="wheel__pointer" aria-hidden="true"></span>
+        <svg class="wheel__disc" id="wheelDisc" viewBox="-200 -200 400 400" role="img" aria-label="Колесо с подарками"></svg>
+        <span class="wheel__hub"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"></span>
+      </div>
     </div>
-    <div class="media contacts__map" data-ph="карта / схема проезда"></div>
   </section>
+  </div>
+
+  <!-- Основатель -->
+  <section class="founder founder--mag" id="founder">
+    <span class="founder__bigname" aria-hidden="true">Эллина</span>
+    <div class="wrap section founder__inner">
+      <div class="founder__photo">
+        <img src="images/people/ellina-cut.webp?v=1792599180&o=1792596660" alt="Эллина Александровна Ермакова в красной шляпе" width="1280" height="1280" loading="lazy">
+      </div>
+      <div class="founder__text">
+        <div class="eyebrow">Создатель «Райского сада» · Человек за проектом</div>
+        <h2 class="h2">Эллина Александровна <em>Ермакова</em></h2>
+        <p class="founder__role">Предприниматель, основатель «Райского сада»</p>
+        <p class="lead">Более 20 лет управляет собственным бизнесом и развивает команды. Работает с вопросами корпоративной культуры, сервиса, финансового планирования и лидерства.</p>
+        <p class="lead">В «Райском саду» Эллина Александровна курирует женское бизнес-сообщество как ментор, делится управленческим опытом и помогает участницам обсуждать задачи своего дела.</p>
+        <blockquote class="founder__quote">В центре её подхода люди, вовлечённость и среда, в которой можно раскрывать свой потенциал.</blockquote>
+        <a href="https://t.me/ermakovalina2022" target="_blank" rel="noopener" class="sq-btn sq-btn--wine">Telegram Эллины Александровны</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Пространство -->
+  <div class="space2-bg">
+  <section class="space2" id="space">
+    <div class="wrap">
+      <header class="space2__head">
+        <div><div class="eyebrow">Что есть в саду</div><h2 class="h2">Зал, кофейня <em>и&nbsp;тихий кабинет</em></h2></div>
+        <p>Пространство на первом этаже в центре Голицыно. Всё, чтобы прийти на встречу, задержаться на чашку кофе или провести свою частную консультацию.</p>
+      </header>
+      <div class="screens">
+        <article class="scr scr--a is-on" data-n="01" tabindex="0">
+          <img class="scr__detail" src="images/space/hall.webp?v=1792605886" alt="" loading="lazy" width="900" height="1200">
+          <span class="scr__vt">Зал событий</span>
+          <div class="scr__body"><span class="scr__cap">Зал событий</span><h3>Здесь проходит <em>вся программа</em></h3><p>Светлый зал для мастер-классов, кинопоказов, клубов и женских вечеров. Здесь проходит вся программа сада.</p></div>
+        </article>
+        <article class="scr scr--b" data-n="02" tabindex="0">
+          <img class="scr__detail" src="images/space/cafe.webp?v=1792605886" alt="" loading="lazy" width="900" height="1200">
+          <span class="scr__vt">Кофейня</span>
+          <div class="scr__body"><span class="scr__cap">Кофейня</span><h3>Кофе <em>до и после</em></h3><p>Кофе, чай и десерты до встречи, после неё или просто так. Деревянные столы, бордовые кресла и место, где удобно поговорить с подругой.</p></div>
+        </article>
+        <article class="scr scr--c" data-n="03" tabindex="0">
+          <img class="scr__detail" src="images/space/cabinet.webp?v=1792605886" alt="" loading="lazy" width="900" height="1200">
+          <span class="scr__vt">Кабинет</span>
+          <div class="scr__body"><span class="scr__cap">Кабинет по часам</span><h3>Тихо <em>и&nbsp;отдельно</em></h3><p>Отдельный уютный кабинет для частной практики: психологам, тарологам, коучам, для деловых встреч и переговоров. Бронирование по часам, в будни и утром.</p><a class="sq-btn sq-btn--milk" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Узнать условия</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- Экспертам -->
+  <section class="grow" id="experts">
+    <picture class="grow__bg">
+      <source srcset="images/experts/vase-sm.webp?v=1792607267" media="(max-width: 960px)">
+      <img src="images/experts/vase.webp?v=1792607267" alt="Ветви цветущей яблони с плодами в белой керамической вазе" width="1672" height="941" loading="lazy">
+    </picture>
+    <div class="wrap grow__inner">
+      <header class="grow__head">
+        <div class="eyebrow">Мастерам и экспертам</div>
+        <h2 class="h2">Мы собираем гостей. <em>Вы растёте.</em></h2>
+      </header>
+      <ol class="grow__cards">
+        <li class="grow__card grow__card--1"><span class="grow__n">01</span><h3>Первая встреча</h3><p>Вы показываете свой формат живой аудитории, которую собирает сад. Мы анонсируем встречу и продвигаем вас как ведущую.</p></li>
+        <li class="grow__card grow__card--2"><span class="grow__n">02</span><h3>Отзывы гостей</h3><p>Гости оставляют отзывы и рекомендации, вы получаете известность в округе и первых частных клиентов.</p></li>
+        <li class="grow__card grow__card--3"><span class="grow__n">03</span><h3>Регулярная программа</h3><p>Если формат понравился, он входит в постоянную афишу, и вы зарабатываете долю выручки с каждой встречи.</p></li>
+        <li class="grow__card grow__card--4"><span class="grow__n">04</span><h3>Частная практика</h3><p>Индивидуальные сессии с гостями можно проводить у нас же, в кабинете по часам.</p></li>
+      </ol>
+      <div class="grow__foot">
+        <p>Ищем мастеров, психологов, ведущих и экспертов, которые хотят проводить встречи для гостей Голицыно и соседних посёлков. Аренда зала не нужна: программу, продвижение и запись берём на себя.</p>
+        <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener" class="sq-btn sq-btn--milk">Предложить свою встречу</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Опрос -->
+  <section class="survey2" id="ideas">
+    <div class="wrap survey2__grid">
+      <div class="survey2__text">
+        <div class="eyebrow">Создаём пространство вместе</div>
+        <h2 class="h2">Каким вы хотите видеть <em>«Райский сад»?</em></h2>
+        <p>Какие встречи вам интересны? Когда удобно приходить? Чего не хватает рядом с домом? Ваши ответы помогают нам выбирать темы, приглашать ведущих и делать программу лучше.</p>
+        <p>Можно предложить свой формат или рассказать, какую встречу вы готовы провести.</p>
+        <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener" class="sq-btn sq-btn--wine">Пройти опрос</a>
+      </div>
+      <div class="survey2__poll">
+        <p class="survey2__count"><b>43</b>будущие гостьи уже ответили. Вот что растёт в саду:</p>
+        <ul class="branches" id="branches" data-max="28">
+          <li data-v="28">Творческие мастер-классы</li>
+          <li data-v="20">Психология и саморазвитие</li>
+          <li data-v="19">Кино и книжные вечера</li>
+          <li data-v="16">Таро и игры на самопознание</li>
+          <li data-v="15">Женские вечера</li>
+        </ul>
+        <p class="survey2__note">Удобнее всего приходить в субботу и воскресенье. Опрос октября 2026 года.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Вопросы -->
+  <section class="faq3" id="faq">
+    <div class="wrap faq3__grid">
+      <header class="faq3__head faq3__head--r">
+        <div class="eyebrow">Перед первой встречей</div>
+        <h2 class="h2">Несколько <em>важных деталей</em></h2>
+      </header>
+      <div class="faq3__main">
+        <div class="faq3__list">
+          <details class="faq3__item" open><summary><span class="faq3__n">01</span><span class="faq3__q">Для кого «Райский сад»?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Для взрослых, которым хочется творчества, общения и времени для себя. Все встречи рассчитаны на взрослых гостей.</p></div></details>
+          <details class="faq3__item"><summary><span class="faq3__n">02</span><span class="faq3__q">Можно ли прийти одной?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Да. Пространство задумано в том числе для новых знакомств. Выберите интересную тему и приходите без компании, ведущие помогут быстро почувствовать себя своей.</p></div></details>
+          <details class="faq3__item"><summary><span class="faq3__n">03</span><span class="faq3__q">Нужен ли опыт для мастер-класса?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Чаще всего нет. Уровень подготовки указываем в анонсе. Многие форматы созданы как раз для первого знакомства с творчеством.</p></div></details>
+          <details class="faq3__item"><summary><span class="faq3__n">04</span><span class="faq3__q">Сколько стоят встречи и как записаться?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Стоимость указана в афише у каждой встречи и зависит от срока оплаты: чем раньше, тем выгоднее. Нажмите на встречу в афише и выберите «Записаться и оплатить организаторский взнос».</p></div></details>
+          <details class="faq3__item"><summary><span class="faq3__n">05</span><span class="faq3__q">Можно ли арендовать кабинет?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Да, кабинет сдаётся по часам для частной практики и деловых встреч. Напишите нам в <a href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Telegram</a>, расскажем о свободном времени и условиях.</p></div></details>
+          <details class="faq3__item"><summary><span class="faq3__n">06</span><span class="faq3__q">Как предложить свою тему или мастер-класс?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Заполните <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener">опрос</a>: в нём есть вопрос для будущих ведущих и экспертов. Расскажите о теме, своём опыте и оставьте контакт, и мы свяжемся с вами.</p></div></details>
+          <details class="faq3__item"><summary><span class="faq3__n">07</span><span class="faq3__q">Где вы находитесь?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Голицыно, Одинцовский округ, ул. Советская, 59А, первый этаж.</p></div></details>
+        </div>
+      </div>
+      <div class="faq3__media" aria-hidden="true">
+        <video class="faq3__vid" muted playsinline webkit-playsinline preload="metadata" poster="video/safflower-first.webp?v=1792662369" data-end="video/safflower-last.webp?v=1792662369">
+          <source src="video/safflower.mp4?v=1792662369" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
 
 </main>
 
-<footer class="footer">
-  <div class="wrap footer__inner">
-    <span class="footer__name">Райский сад</span>
-    <span>© 2026 Райский сад · Место, где с вами что-нибудь случается</span>
+<footer class="finale" id="contacts">
+  <div class="wrap">
+    <div class="finale__top">
+      <div class="finale__text">
+        <div class="eyebrow">Контакты</div>
+        <h2 class="finale__title">Приходите <em>в сад</em></h2>
+        <p class="finale__addr">Голицыно, ул. Советская, 59А<small>Одинцовский округ · первый этаж</small></p>
+        <a class="sq-btn sq-btn--milk finale__route" href="https://yandex.ru/maps/?text=%D0%93%D0%BE%D0%BB%D0%B8%D1%86%D1%8B%D0%BD%D0%BE%2C%20%D1%83%D0%BB.%20%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%2C%2059%D0%90" target="_blank" rel="noopener">Построить маршрут</a>
+        <nav class="finale__links" aria-label="Связаться">
+          <a href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Telegram «Райского сада» <i aria-hidden="true">→</i></a>
+          <a href="https://t.me/ermakovalina2022" target="_blank" rel="noopener">Telegram основательницы <i aria-hidden="true">→</i></a>
+          <a href="https://www.instagram.com/rayskiysad_golitsyno/" target="_blank" rel="noopener">Instagram* <i aria-hidden="true">→</i></a>
+          <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener">Опрос: ваши идеи и пожелания <i aria-hidden="true">→</i></a>
+        </nav>
+        <p class="finale__note">* Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в России.</p>
+      </div>
+      <figure class="finale__art"><img src="images/footer/branch-cut.webp?v=1792659243" alt="Цветущая ветка яблони с красным яблоком" width="1122" height="1121" loading="lazy"></figure>
+    </div>
+    <div class="finale__bottom">
+      <a class="finale__logo" href="#hero"><img src="assets/logo-emblem.webp" alt="" width="360" height="186"><span>Райский сад</span></a>
+      <nav class="finale__nav" aria-label="Разделы">
+        <a href="#about">О пространстве</a><a href="#formats">Форматы</a><a href="#calendar">Афиша</a><a href="#clubs">Клубы</a><a href="#space">Пространство</a><a href="#experts">Экспертам</a><a href="#faq">Вопросы</a>
+      </nav>
+      <span class="finale__copy">© 2026 Райский сад</span>
+    </div>
   </div>
 </footer>
 
-<script src="script.js?v=1790686670"></script>
+<!-- Карточка встречи -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__card md" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal__close" data-close aria-label="Закрыть">×</button>
+    <div class="modal__content" id="modalContent"></div>
+  </div>
+</div>
+
+<script src="script.js?v=1792662216"></script>
 </body>
 </html>

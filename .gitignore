@@ -10,3 +10,22 @@ images/deco/leaves-blur.webp
 images/deco/vine.webp
 images/garden/arch.webp
 images/garden/arch-sm.webp
+
+# черновики, резервные копии и исходники — не для сайта
+_bak-*
+_backup-*
+_src/
+_*-variants.html
+_shot*.html
+_btns*.html
+_fonts*.html
+_heads*.html
+_audit.html
+_modaltest*.html
+index-v*.html
+index-amaryllis.html
+_*variants*.html
+# из видео на сайте используются только два ролика
+video/*
+!video/kling-bg*
+!video/safflower*

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мобильная версия</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{background:#2A2124;font-family:-apple-system,system-ui,sans-serif;color:#F4F0E7;min-height:100vh;padding:24px 16px 40px}
+h1{font-weight:400;font-size:18px;letter-spacing:.04em;text-align:center;margin-bottom:6px}
+p.hint{font-size:13px;opacity:.6;text-align:center;margin-bottom:24px}
+.row{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
+.dev{display:flex;flex-direction:column;align-items:center;gap:10px}
+.dev span{font-size:12px;opacity:.6;letter-spacing:.08em}
+.phone{position:relative;padding:12px;border-radius:52px;background:#111;box-shadow:0 0 0 2px #3a3335,0 30px 80px rgba(0,0,0,.5)}
+.phone::before{content:'';position:absolute;top:20px;left:50%;translate:-50% 0;width:110px;height:30px;border-radius:20px;background:#111;z-index:2}
+iframe{display:block;border:0;border-radius:40px;background:#fff}
+</style></head><body>
+<h1>«Райский сад» на телефоне</h1>
+<p class="hint">Прокручивайте внутри экранов. Сайт должен быть запущен: http://localhost:8080</p>
+<div class="row">
+  <div class="dev"><div class="phone"><iframe src="index.html" width="390" height="844" title="iPhone 14"></iframe></div><span>iPhone 14 · 390 px</span></div>
+</div>
+</body></html>
