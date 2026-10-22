@@ -2914,3 +2914,24 @@ p, li, .faq3__a p, .md__main p, .md__block p, .md__steps li, .tile__host span, .
 /* Golos на тёмном и светлом: тоньше и мягче на вид */
 body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 @media (min-width: 961px) { .faq3 .h2 { white-space: normal !important; font-size: 48px !important; } }
+
+/* заставка с раскрытыми цветами всегда под видео: если браузер выгрузит ролик при прокрутке, цветы остаются */
+.hero--kling .hero__stage { background: #440212 url(video/kling-bg-last.webp?v=1792516832) 100% 50% / cover no-repeat; }
+.hero--kling .hero__vid--bg { background: url(video/kling-bg-last.webp?v=1792516832) 100% 50% / cover no-repeat; }
+@media (max-width: 960px) {
+  .hero--kling .hero__stage { background-position: 80% 50%; }
+  .hero--kling .hero__vid--bg { background-position: 80% 50%; }
+}
+.faq3__vid { background: #F4F0E7 url(video/safflower-last.webp?v=1792662369) center / cover no-repeat !important; }
+
+/* мастерам: больше воздуха между карточками, текст снизу тоньше и мельче */
+@media (min-width: 961px) {
+  .grow__inner { min-height: clamp(900px, 70vw, 1040px) !important; }
+  .grow__card { width: 34% !important; }
+  .grow__card--1 { left: 0 !important; top: 6% !important; }
+  .grow__card--2 { right: 0 !important; top: 0 !important; }
+  .grow__card--3 { left: 58% !important; top: 40% !important; }
+  .grow__card--4 { left: 4% !important; top: 50% !important; }
+}
+.grow__foot p { font-family: 'Noto Serif Display', serif !important; font-weight: 300 !important; font-style: normal !important;
+  font-size: clamp(17px, 1.35vw, 20px) !important; line-height: 1.5 !important; max-width: 440px !important; color: rgba(247,236,232,.88) !important; letter-spacing: 0 !important; }

@@ -508,3 +508,17 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 50 : 5600);
   });
 })();
+
+// при возврате к первому экрану видео не начинается заново и не пропадает: держим последний кадр
+(function keepBloom() {
+  const vids = [...document.querySelectorAll('.hero__vid, .faq3__vid')];
+  const fix = () => vids.forEach(v => {
+    if (!v.classList.contains('is-done') && !v.ended) return;
+    if (v.dataset.end) v.poster = v.dataset.end;
+    if (v.duration && v.currentTime < v.duration - .05) { try { v.currentTime = v.duration; } catch (e) {} }
+  });
+  vids.forEach(v => v.addEventListener('ended', () => v.classList.add('is-done'), { once: true }));
+  document.addEventListener('visibilitychange', fix);
+  window.addEventListener('pageshow', fix);
+  window.addEventListener('scroll', () => { if (window.scrollY < window.innerHeight) fix(); }, { passive: true });
+})();
