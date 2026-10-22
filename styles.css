@@ -2876,3 +2876,41 @@ p, li, .faq3__a p, .md__main p, .md__block p, .md__steps li, .tile__host span, .
 }
 /* курсивные цитаты и подписи остаются антиквой */
 .founder__quote, .founder__role, .opening2__free, .inv__sign, .md__lead { font-family: 'Noto Serif Display', serif !important; }
+
+/* основательница компактнее: имя в две строки, фото поднято и стоит рядом с текстом, снизу без пустоты */
+@media (min-width: 961px) {
+  .founder--mag .founder__inner { align-items: center !important; padding-top: 48px !important; padding-bottom: 48px !important; }
+  .founder--mag .founder__photo { align-self: center !important; }
+  .founder--mag .founder__photo img { max-height: 640px; width: auto !important; max-width: 100%; }
+  .founder--mag .founder__text { padding: 0 !important; align-self: center !important; }
+  .founder--mag .founder__text .h2 { font-size: 52px !important; line-height: 1.04 !important; white-space: nowrap; }
+  .founder--mag .founder__text .h2 em { display: block; }
+  .founder--mag .founder__text { gap: 14px !important; }
+}
+@media (min-width: 961px) {
+  .founder--mag .founder__inner { padding-bottom: 0 !important; align-items: end !important; }
+  .founder--mag .founder__photo { align-self: end !important; }
+  .founder--mag .founder__text { align-self: center !important; padding-bottom: 48px !important; }
+}
+
+/* вопросы компактнее: заголовок в одну строку, цветок от верха блока */
+@media (min-width: 961px) {
+  .faq3 { padding-top: 56px !important; }
+  .faq3 .h2 { font-size: 52px !important; white-space: nowrap; }
+  .faq3 .h2 em { display: inline !important; }
+  .faq3__list { margin-top: 24px !important; }
+  .faq3__main { padding-bottom: 56px !important; }
+  .faq3__media { align-self: stretch !important; align-items: flex-end !important; }
+  .faq3__vid { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 7%) !important; mask-image: linear-gradient(180deg, transparent 0, #000 7%) !important; }
+}
+
+/* финал плотнее; адрес и ссылки — прежними шрифтами, Golos только в длинных абзацах */
+.finale__addr { font-family: 'Noto Serif Display', serif !important; font-weight: 300 !important; letter-spacing: 0 !important; font-size: clamp(26px, 2.4vw, 36px) !important; }
+.finale__links a { font-family: 'Tenor Sans', sans-serif !important; letter-spacing: .04em !important; font-size: clamp(15px, 1.15vw, 17px) !important; padding: 14px 0 !important; }
+.finale__title { font-size: clamp(52px, 6vw, 96px) !important; margin: 8px 0 20px !important; }
+.finale__route { margin-top: 20px !important; }
+.finale__links { margin-top: 24px !important; }
+@media (min-width: 961px) { .finale { padding-top: 64px !important; } .finale__bottom { margin-top: 40px !important; } }
+/* Golos на тёмном и светлом: тоньше и мягче на вид */
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+@media (min-width: 961px) { .faq3 .h2 { white-space: normal !important; font-size: 48px !important; } }
