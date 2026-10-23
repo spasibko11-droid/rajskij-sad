@@ -29,3 +29,10 @@ _*variants*.html
 video/*
 !video/kling-bg*
 !video/safflower*
+!video/garden-light*
+_old/
+_shot*.html
+_fontcmp.html
+_nums.html
+_err.html
+light_body.html
