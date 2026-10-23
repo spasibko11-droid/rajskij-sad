@@ -40,10 +40,10 @@ onScrollHeader();
 })();
 
 // ===== Афиша ноября =====
-// Цены по срокам: до 15 ноября (включая день открытия) и после открытия.
+// Цены по срокам: до открытия и после открытия.
 const PRICE_SWITCH_DAY = '2026-11-15';
 const SIGNUP_TG = 'https://t.me/rayskiysad_golitsyno';
-const TIER_LABELS = ['До 15 ноября', 'После открытия'];
+const TIER_LABELS = ['До открытия', 'После открытия'];
 // живописные постеры к событиям: добавляйте путь, когда картина готова
 const POSTERS = {
   lilu: 'images/posters/lilu.webp?v=1792680082',
@@ -138,7 +138,7 @@ const EVENTS = [
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const rub = n => n.toLocaleString('ru-RU') + ' ₽';
 
-// какая цена действует сегодня: 0 до 15 ноября, 1 после открытия
+// какая цена действует сегодня: 0 до открытия, 1 после открытия
 function currentTier() {
   const d = new Date();
   const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -459,7 +459,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
   ];
   const n = PRIZES.length, step = 360 / n;
   // сектора рисуем сами (у картинки они неровные), от картинки берём только обод с цветами
-  const COLORS = ['#49191E', '#E7DECB', '#4E5633', '#DCB0A7'];
+  const COLORS = ['#5E1E2B', '#E7DECB', '#4E5633', '#DCB0A7'];
   const R = 181, pt = (a, r) => { const t = (a - 90) * Math.PI / 180; return [(r * Math.cos(t)).toFixed(2), (r * Math.sin(t)).toFixed(2)]; };
   disc.innerHTML = `<defs>
       <radialGradient id="wheelRim"><stop offset="0.885" stop-color="#000"/><stop offset="0.9" stop-color="#fff"/></radialGradient>
@@ -474,7 +474,7 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
     PRIZES.map((p, i) => { const [x, y] = pt(i * step, R); return `<line x1="0" y1="0" x2="${x}" y2="${y}" stroke="#B8964E" stroke-width="1.2" opacity=".85"/>`; }).join('') +
     `<image href="images/wheel/wheel.webp?v=1792680082" x="-200" y="-200" width="400" height="400" mask="url(#wheelMask)"/>` +
     PRIZES.map((p, i) => {
-      const mid = i * step + step / 2, fg = i % 2 === 0 ? '#F7ECE8' : '#5A0F22';
+      const mid = i * step + step / 2, fg = i % 2 === 0 ? '#F7ECE8' : '#631F2E';
       return `<g transform="rotate(${mid - 90}) translate(100 0)"><text text-anchor="middle" fill="${fg}">
         <tspan x="0" dy="-4">${esc(p.s[0])}</tspan><tspan x="0" dy="17">${esc(p.s[1])}</tspan></text></g>`;
     }).join('');

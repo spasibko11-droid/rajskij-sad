@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Райский сад · пространство заботы и творчества в Голицыно</title>
-<meta name="description" content="«Райский сад» в Голицыно: мастер-классы, разговоры о важном, кино и книжные вечера, встречи с экспертами и клубы по интересам. Открываем двери 15 ноября.">
+<meta name="description" content="«Райский сад» в Голицыно: мастер-классы, разговоры о важном, кино и книжные вечера, встречи с экспертами и клубы по интересам. Открываемся в ноябре.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="video/kling-bg-first.webp?v=1792680082" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Tenor+Sans&family=Golos+Text:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=1792680082">
+<link rel="stylesheet" href="styles.css?v=1792759882">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body class="page-film">
@@ -64,7 +64,7 @@
         </div>
         <p class="hero__pin"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Голицыно, ул. Советская, 59А</p>
       </div>
-      <a href="#calendar" class="hero__kick hero__badge" aria-label="Открываем двери 15 ноября, смотреть афишу"><span>Открываемся</span><b>15</b><span>ноября</span></a>
+      <a href="#calendar" class="hero__kick hero__badge" aria-label="Открываемся в ноябре, смотреть афишу"><span>Открываемся</span><b class="hero__badge-month">в&nbsp;ноябре</b><span>2026</span></a>
     </div>
   </section>
 
@@ -215,10 +215,10 @@
       <article class="opening2">
         <div class="opening2__art"><img decoding="async" src="images/posters/opening.webp?v=1792680082" alt="Живописный натюрморт при свечах" width="800" height="1000" loading="lazy"></div>
         <div class="opening2__body">
-          <div class="opening2__date"><b>15</b><span>ноября<small>воскресенье · 2026</small></span></div>
+          <div class="opening2__date opening2__date--month"><b>ноябрь</b><span><small>2026</small></span></div>
           <div class="opening2__kicker">Начинаем знакомство</div>
           <h3 class="opening2__title">«Райский сад» <em>открывает свои двери</em></h3>
-          <p>С 15 ноября приглашаем на первые мастер-классы, клубные встречи и вечера. Выбирайте встречу в афише и записывайтесь заранее: до 15 ноября участие стоит дешевле.</p>
+          <p>В ноябре приглашаем на первые мастер-классы, клубные встречи и вечера. Выбирайте встречу в афише и записывайтесь заранее: до открытия участие стоит дешевле.</p>
           <p class="opening2__free">Первые встречи по выгодной цене.</p>
           <div class="opening2__actions">
             <a href="#events" class="sq-btn sq-btn--milk">Смотреть первые встречи</a>
@@ -230,32 +230,6 @@
       <div class="events events--chess" id="events"></div>
     </div>
   </section>
-
-  <!-- Колесо фортуны -->
-  <div class="wheel-bg">
-  <section class="wheel" id="wheel">
-    <div class="wrap wheel__grid">
-      <div class="wheel__text">
-        <div class="eyebrow">Подарки к открытию</div>
-        <h2 class="h2">Испытайте <em>удачу в саду</em></h2>
-        <p>Крутите колесо и забирайте подарок: бесплатный мастер-класс, скидку на первую встречу или угощение в нашей кофейне. Одна попытка на каждого гостя.</p>
-        <button type="button" class="sq-btn sq-btn--milk wheel__spin" id="wheelSpin">Крутить колесо</button>
-        <div class="wheel__result" id="wheelResult" aria-live="polite" hidden>
-          <span class="wheel__label">Ваш подарок</span>
-          <b class="wheel__prize" id="wheelPrize"></b>
-          <span class="wheel__code">Промокод: <strong id="wheelCode"></strong></span>
-          <p>Сохраните промокод и назовите его при записи на встречу или в кофейне. Подарок действует до 31 декабря 2026 года.</p>
-          <a class="sq-btn sq-btn--line" href="https://t.me/rayskiysad_golitsyno" target="_blank" rel="noopener">Написать в Telegram</a>
-        </div>
-      </div>
-      <div class="wheel__stage">
-        <span class="wheel__pointer" aria-hidden="true"></span>
-        <svg class="wheel__disc" id="wheelDisc" viewBox="-200 -200 400 400" role="img" aria-label="Колесо с подарками"></svg>
-        <span class="wheel__hub"><img decoding="async" src="assets/logo-emblem.webp" alt="" width="360" height="186"></span>
-      </div>
-    </div>
-  </section>
-  </div>
 
   <!-- Основатель -->
   <section class="founder founder--mag" id="founder">
@@ -306,11 +280,8 @@
   </div>
 
   <!-- Экспертам -->
-  <section class="grow" id="experts">
-    <picture class="grow__bg">
-      <source srcset="images/experts/vase-sm.webp?v=1792680082" media="(max-width: 960px)">
-      <img decoding="async" src="images/experts/vase.webp?v=1792680082" alt="Ветви цветущей яблони с плодами в белой керамической вазе" width="1672" height="941" loading="lazy">
-    </picture>
+  <section class="grow grow--light" id="experts">
+    <img class="grow__vase-l" src="images/experts/vase-light.webp?v=1792759520" alt="Ветви цветущей яблони с яблоками в керамической вазе" width="1672" height="940" loading="lazy">
     <div class="wrap grow__inner">
       <header class="grow__head">
         <div class="eyebrow">Мастерам и экспертам</div>
@@ -324,7 +295,7 @@
       </ol>
       <div class="grow__foot">
         <p>Ищем мастеров, психологов, ведущих и экспертов, которые хотят проводить встречи для гостей Голицыно и соседних посёлков. Аренда зала не нужна: программу, продвижение и запись берём на себя.</p>
-        <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener" class="sq-btn sq-btn--milk">Предложить свою встречу</a>
+        <a href="https://forms.yandex.ru/u/6abe9f35eb614675eab06506/" target="_blank" rel="noopener" class="sq-btn sq-btn--wine">Предложить свою встречу</a>
       </div>
     </div>
   </section>
@@ -371,11 +342,7 @@
           <details class="faq3__item"><summary><span class="faq3__n">07</span><span class="faq3__q">Где вы находитесь?</span><i class="faq3__pm" aria-hidden="true"></i></summary><div class="faq3__a"><p>Голицыно, Одинцовский округ, ул. Советская, 59А, первый этаж.</p></div></details>
         </div>
       </div>
-      <div class="faq3__media" aria-hidden="true">
-        <video class="faq3__vid" muted playsinline webkit-playsinline preload="none" poster="video/safflower-first.webp?v=1792680082" data-end="video/safflower-last.webp?v=1792680082">
-          <source src="video/safflower.mp4?v=1792680082" type="video/mp4">
-        </video>
-      </div>
+      <div class="faq3__media faq3__media--apple" aria-hidden="true"><img src="images/about2/apple-cut.webp?v=1792759351" alt="" width="686" height="700" loading="lazy"></div>
     </div>
   </section>
 
@@ -398,7 +365,7 @@
         </nav>
         <p class="finale__note">* Instagram принадлежит компании Meta, признанной экстремистской и запрещённой в России.</p>
       </div>
-      <figure class="finale__art"><img decoding="async" src="images/footer/branch-cut.webp?v=1792680082" alt="Цветущая ветка яблони с красным яблоком" width="1122" height="1121" loading="lazy"></figure>
+      <div class="finale__map"><iframe src="https://yandex.ru/map-widget/v1/?text=%D0%93%D0%BE%D0%BB%D0%B8%D1%86%D1%8B%D0%BD%D0%BE%2C%20%D1%83%D0%BB.%20%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%2C%2059%D0%90&amp;z=16" title="Карта: Голицыно, ул. Советская, 59А" loading="lazy" allowfullscreen></iframe></div>
     </div>
     <div class="finale__bottom">
       <a class="finale__logo" href="#hero"><img decoding="async" src="assets/logo-emblem.webp" alt="" width="360" height="186"><span>Райский сад</span></a>
@@ -418,6 +385,6 @@
   </div>
 </div>
 
-<script src="script.js?v=1792680082"></script>
+<script src="script.js?v=1792759882"></script>
 </body>
 </html>
